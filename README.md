@@ -1,6 +1,6 @@
 # Sprout (under development) 
 
-Understand your project at a glance.
+`Understand your project at a glance.`
 
 Sprout is a fast, developer-first directory explorer written in Go.
 
