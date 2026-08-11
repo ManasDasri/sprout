@@ -1,6 +1,6 @@
-# Sprout (under development) 
+# Sprout (under development)
 
-`Understand your project at a glance.`
+- Understand your project at a glance.
 
 Sprout is a fast, developer-first directory explorer written in Go.
 
@@ -31,7 +31,7 @@ Note: Sprout is currently under development. Some features listed above are plan
 ### Install with Go
 
 ```
-go install github.com/<ManaDasri>/sprout@latest
+go install github.com/ManasDasri/sprout@latest
 ```
 
 Then:
@@ -43,7 +43,7 @@ sprout
 ### Build from source
 
 ```
-git clone https://github.com/<ManasDasri>/sprout.git
+git clone https://github.com/ManasDasri/sprout.git
 cd sprout
 go build -o sprout .
 ```
@@ -414,11 +414,15 @@ External dependencies should be kept minimal.
 - `--git`
 - Git status indicators
 - Improved project detection
+- `--orphans` — cross-reference the import graph against the filesystem and flag files nothing imports; a lightweight dead-code finder that isn't scoped to one language or bolted onto a heavyweight linter
+- `--churn` — parse `git log` change frequency per file and render it inline in the tree as an intensity marker, so hotspots are visible at a glance instead of living in a separate report
 
 **v0.4**
 - `--json`
 - `--markdown`
 - Structured output API
+- `--diff <ref>..<ref>` — render a tree with added, removed, and changed subtrees nested in place, instead of a flat file-stat list, so structural impact of a PR is visible at a glance
+- `--config-map` — group every config-ish file across the repo (`.env*`, `*.config.*`, `Dockerfile`, `docker-compose.yml`, CI YAML, `tsconfig`, etc.) into one flat "control plane" view instead of leaving them scattered through the tree
 
 **v1.0**
 - Stable CLI interface
@@ -432,9 +436,21 @@ External dependencies should be kept minimal.
 **Future**
 - `--ai`
 - AI-oriented project context
+- `--entry` — build a lightweight import/dependency graph per language and rank files by centrality (how many files import them, how deep from an entry point like `main.go` or `index.js`), producing a suggested reading order for unfamiliar codebases
 - Additional output formats
 - Editor integrations
 - Plugin/extensibility system
+
+## Project Structure
+
+Once v0.1 is stable, the plan is to move Sprout under an organization and split it into focused repositories:
+
+- **sprout-src** — the core CLI and Go source
+- **sprout-docs** — documentation site and guides
+- **homebrew-tap** — Homebrew tap for `brew install`
+- Additional repos as needed (e.g. editor integrations, plugin registry)
+
+This keeps the core binary lean while letting docs, distribution, and integrations evolve independently.
 
 ## Distribution
 
@@ -443,7 +459,7 @@ The goal is to make Sprout installable through several methods.
 **Go**
 
 ```
-go install github.com/<ManasDasri>/sprout@latest
+go install github.com/ManasDasri/sprout@latest
 ```
 
 **Homebrew**
@@ -451,7 +467,7 @@ go install github.com/<ManasDasri>/sprout@latest
 Eventually:
 
 ```
-brew install <ManasDasri>/tap/sprout
+brew install ManasDasri/tap/sprout
 ```
 
 **GitHub Releases**
