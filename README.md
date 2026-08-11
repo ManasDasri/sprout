@@ -1,4 +1,4 @@
-Sprout (Under development)
+# Sprout (Under development)
 
 Understand your project at a glance.
 
