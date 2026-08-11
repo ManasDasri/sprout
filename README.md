@@ -31,7 +31,7 @@ Note: Sprout is currently under development. Some features listed above are plan
 ### Install with Go
 
 ```
-go install github.com/<your-username>/sprout@latest
+go install github.com/<ManaDasri>/sprout@latest
 ```
 
 Then:
@@ -43,7 +43,7 @@ sprout
 ### Build from source
 
 ```
-git clone https://github.com/<your-username>/sprout.git
+git clone https://github.com/<ManasDasri>/sprout.git
 cd sprout
 go build -o sprout .
 ```
@@ -443,7 +443,7 @@ The goal is to make Sprout installable through several methods.
 **Go**
 
 ```
-go install github.com/<your-username>/sprout@latest
+go install github.com/<ManasDasri>/sprout@latest
 ```
 
 **Homebrew**
@@ -451,7 +451,7 @@ go install github.com/<your-username>/sprout@latest
 Eventually:
 
 ```
-brew install <your-username>/tap/sprout
+brew install <ManasDasri>/tap/sprout
 ```
 
 **GitHub Releases**
